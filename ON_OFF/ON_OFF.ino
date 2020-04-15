@@ -11,14 +11,14 @@
  *
  *================================================================================================================================
  * This code is for ON/OFF tab of Arduino Automation App.
- * The code is only campatible for Arduino MEGA.
- * You can remove the pins from 14 to 21 from the code to make it work for Arduino UNO
+ * The code is campatible for all Arduino Boards
+ * You can use the digiatl pins from 4 to 12 to connect the Relay Module
  *=================================================================================================================================
  */
 
 /*
- * Connections of Arduino MEGA and Bluetooth Module HC-05 for this Code:
- * Arduino MEGA  |  Bluetooth Module (HC-05)
+ * Connections of Arduino and Bluetooth Module HC-05 for this Code:
+ *      Arduino  |  Bluetooth Module (HC-05)
  *            3  |  RX
  *            2  |  TX
  *           5V  |  5V
@@ -32,7 +32,7 @@
 
 SoftwareSerial mySerial (2, 3);    //(RX, TX)
 
-//defining all the pins of Arduino MEGA
+//defining all the pins of Arduino
 #define s1 4
 #define s2 5
 #define s3 6
@@ -42,15 +42,6 @@ SoftwareSerial mySerial (2, 3);    //(RX, TX)
 #define s7 10
 #define s8 11
 #define s9 12
-#define s10 13
-#define s11 14
-#define s12 15
-#define s13 16
-#define s14 17
-#define s15 18
-#define s16 19
-#define s17 20
-#define s18 21
 
 void setup() 
 {
@@ -64,15 +55,6 @@ void setup()
   pinMode(s7, OUTPUT);
   pinMode(s8, OUTPUT);
   pinMode(s9, OUTPUT);
-  pinMode(s10, OUTPUT);
-  pinMode(s11, OUTPUT);
-  pinMode(s12, OUTPUT);
-  pinMode(s13, OUTPUT);
-  pinMode(s14, OUTPUT);
-  pinMode(s15, OUTPUT);
-  pinMode(s16, OUTPUT);
-  pinMode(s17, OUTPUT);
-  pinMode(s18, OUTPUT);
 
   //defining baudrate
   Serial.begin(9600);
@@ -175,96 +157,6 @@ void loop()
     {
       digitalWrite(s9, LOW);
       Serial.println("Switch 9 is OFF");
-    }
-    if(val == 'J')
-    {
-      digitalWrite(s10, HIGH);
-      Serial.println("Switch 10 is ON");
-    }
-    if(val == 'j')
-    {
-      digitalWrite(s10, LOW);
-      Serial.println("Switch 10 is OFF");
-    }
-    if(val == 'K')
-    {
-      digitalWrite(s11, HIGH);
-      Serial.println("Switch 11 is ON");
-    }
-    if(val == 'k')
-    {
-      digitalWrite(s11, LOW);
-      Serial.println("Switch 11 is OFF");
-    }
-    if(val == 'L')
-    {
-      digitalWrite(s12, HIGH);
-      Serial.println("Switch 12 is ON");
-    }
-    if(val == 'l')
-    {
-      digitalWrite(s12, LOW);
-      Serial.println("Switch 12 is OFF");
-    } 
-    if(val == 'M')
-    {
-      digitalWrite(s13, HIGH);
-      Serial.println("Switch 13 is ON");
-    }
-    if(val == 'm')
-    {
-      digitalWrite(s13, LOW);
-      Serial.println("Switch 13 is OFF");
-    }
-    if(val == 'N')
-    {
-      digitalWrite(s14, HIGH);
-      Serial.println("Switch 14 is ON");
-    }
-    if(val == 'n')
-    {
-      digitalWrite(s14, LOW);
-      Serial.println("Switch 14 is OFF");
-    }
-    if(val == 'O')
-    {
-      digitalWrite(s15, HIGH);
-      Serial.println("Switch 15 is ON");
-    }
-    if(val == 'o')
-    {
-      digitalWrite(s15, LOW);
-      Serial.println("Switch 15 is OFF");
-    }
-    if(val == 'P')
-    {
-      digitalWrite(s16, HIGH);
-      Serial.println("Switch 16 is ON");
-    }
-    if(val == 'p')
-    {
-      digitalWrite(s16, LOW);
-      Serial.println("Switch 16 is OFF");
-    }
-    if(val == 'Q')
-    {
-      digitalWrite(s17, HIGH);
-      Serial.println("Switch 17 is ON");
-    }
-    if(val == 'q')
-    {
-      digitalWrite(s17, LOW);
-      Serial.println("Switch 17 is OFF");
-    }
-    if(val == 'R')
-    {
-      digitalWrite(s18, HIGH);
-      Serial.println("Switch 18 is ON");
-    }
-    if(val == 'r')
-    {
-      digitalWrite(s18, LOW);
-      Serial.println("Switch 18 is OFF");
     }
   }
 }
